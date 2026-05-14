@@ -103,6 +103,26 @@ body{
     font-size:18px;
 }
 
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    padding:60px 7%;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:48px;
+    color:#ffb6ea;
+}
+
+.stat p{
+    color:#b0b0b0;
+    margin-top:6px;
+}
+
 /* SECTION */
 
 .section{
@@ -223,35 +243,45 @@ footer{
 <body>
 
 <!-- WARNING BAR -->
-
 <div class="warning-bar" id="warningBar">
-
     <p>
         Heads up! I'm still uploading work to this portfolio,
         so some projects may still be missing. Check back later for more updates!
     </p>
-
     <span class="warning-close" id="warningClose">&times;</span>
-
 </div>
 
 <!-- HERO -->
-
 <section class="hero">
-
     <img src="bushbanner.png">
-
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
         <h1>bush</h1>
         <p>Roblox GFX • Building • UI • Coding • Modeling</p>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+
+    <div class="stat">
+        <h2 id="visits">0</h2>
+        <p>Visits contributed to</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="years">0</h2>
+        <p>Years of work</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="projects">0</h2>
+        <p>Projects completed</p>
     </div>
 
 </section>
 
 <!-- WORK -->
-
 <section class="section">
 
     <div class="section-title">
@@ -261,90 +291,72 @@ footer{
 
     <div class="gallery">
 
-        <!-- WORK 1 -->
         <div class="card">
             <img src="10.png">
-
             <div class="fade">
                 <h3>Cybuk running from SpringTrap</h3>
                 <p>This is a GFX made for someone named Cybuk where their avatar is running from SpringTrap.</p>
             </div>
         </div>
 
-        <!-- WORK 2 -->
         <div class="card">
             <img src="7.png">
-
             <div class="fade">
                 <h3>Noob Be Mining</h3>
                 <p>A simple GFX containing a noob, the game logo and a rock for my game "Just Mining".</p>
             </div>
         </div>
 
-        <!-- WORK 3 -->
         <div class="card">
             <img src="3.png">
-
             <div class="fade">
                 <h3>Conral Information Center</h3>
                 <p>One of my first builds for a theme park project called Conral.</p>
             </div>
         </div>
 
-        <!-- WORK 4 -->
         <div class="card">
             <img src="5.png">
-
             <div class="fade">
                 <h3>Order 4!</h3>
                 <p>Pick-up area for the fast food teahouse/cafe Whisked.</p>
             </div>
         </div>
 
-        <!-- WORK 5 -->
         <div class="card">
             <img src="6.png">
-
             <div class="fade">
                 <h3>I need to sit...</h3>
                 <p>This GFX contains my previous avatar sitting in nature.</p>
             </div>
         </div>
 
-        <!-- WORK 6 -->
         <div class="card">
             <img src="4.png">
-
             <div class="fade">
                 <h3>Let's have some coffee</h3>
                 <p>A full indoor cafe build inspired by another model I found.</p>
             </div>
         </div>
 
-        <!-- WORK 7 -->
         <div class="card">
             <img src="1.png">
-
             <div class="fade">
                 <h3>Welcome to Conral!</h3>
                 <p>The main center of Conral with a cafe, auditorium and ticket area.</p>
             </div>
         </div>
 
-        <!-- WORK 8 -->
         <div class="card">
             <img src="9.png">
-
             <div class="fade">
                 <h3>Welcome to the cafe that never opened!</h3>
                 <p>Syrudo was a cafe project that was never publicly released.</p>
             </div>
         </div>
 
-        <!-- WORK 9 -->
         <div class="card">
             <img src="2.png">
-
             <div class="fade">
                 <h3>The Auditorium!</h3>
                 <p>The entrance to the Conral theatre/auditorium.</p>
@@ -355,14 +367,10 @@ footer{
 
 </section>
 
-<!-- IMAGE POPUP -->
-
+<!-- POPUP -->
 <div class="popup" id="popup">
-
     <span class="close" id="close">&times;</span>
-
     <img id="popup-img">
-
 </div>
 
 <footer>
@@ -377,44 +385,52 @@ const popupImg = document.getElementById("popup-img");
 const closeBtn = document.getElementById("close");
 
 cards.forEach(card => {
-
     card.addEventListener("click", () => {
-
         const img = card.querySelector("img");
-
         popup.style.display = "flex";
         popupImg.src = img.src;
-
     });
-
 });
 
 closeBtn.addEventListener("click", () => {
-
     popup.style.display = "none";
-
 });
 
 popup.addEventListener("click", (e) => {
-
     if(e.target === popup){
-
         popup.style.display = "none";
-
     }
-
 });
 
 /* WARNING CLOSE */
-
-const warningBar = document.getElementById("warningBar");
-const warningClose = document.getElementById("warningClose");
-
-warningClose.addEventListener("click", () => {
-
-    warningBar.style.display = "none";
-
+document.getElementById("warningClose").addEventListener("click", () => {
+    document.getElementById("warningBar").style.display = "none";
 });
+
+/* STATS ANIMATION */
+const data = {
+    visits: 125000,
+    years: 4,
+    projects: 18
+};
+
+function animate(id, target){
+    let current = 0;
+    const step = Math.ceil(target / 120);
+
+    const interval = setInterval(() => {
+        current += step;
+        if(current >= target){
+            current = target;
+            clearInterval(interval);
+        }
+        document.getElementById(id).innerText = current;
+    }, 15);
+}
+
+animate("visits", data.visits);
+animate("years", data.years);
+animate("projects", data.projects);
 
 </script>
 
