@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bush Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#07070b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffb6ea;
+    border-radius:999px;
+}
+
+/* WARNING BAR */
+
+.warning-bar{
+    width:100%;
+    background:rgba(255,182,234,0.12);
+    border-bottom:1px solid rgba(255,182,234,0.2);
+    padding:16px 70px 16px 20px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#ffd8f2;
+    font-size:15px;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.warning-close{
+    position:absolute;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.warning-close:hover{
+    opacity:0.7;
+}
+
+/* HERO */
+
+.hero{
+    width:100%;
+    height:500px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.55);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,#07070b 5%,transparent 60%);
+}
+
+.hero-content{
+    position:absolute;
+    bottom:60px;
+    left:7%;
+}
+
+.hero-content h1{
+    font-size:70px;
+    color:#ffb6ea;
+}
+
+.hero-content p{
+    color:#d7d7d7;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* SECTION */
+
+.section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#b0b0b0;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    height:380px;
+    border-radius:28px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 30px rgba(255,182,234,0.12);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.fade{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:50px 25px 25px;
+    background:linear-gradient(to top,rgba(0,0,0,0.95),transparent);
+}
+
+.fade h3{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.fade p{
+    color:#d0d0d0;
+    font-size:14px;
+}
+
+/* POPUP */
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    padding:40px;
+}
+
+.popup img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:25px;
+    animation:zoom 0.25s ease;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:40px;
+    cursor:pointer;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#888;
+}
+
+</style>
+</head>
+<body>
+
+<!-- WARNING BAR -->
+
+<div class="warning-bar" id="warningBar">
+
+    <p>
+        Heads up! I'm currently moving work from my old portfolio to this one,
+        so some projects may still be missing. Check back later for more updates!
+    </p>
+
+    <span class="warning-close" id="warningClose">&times;</span>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <img src="bushbanner.png">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>bush</h1>
+        <p>Roblox GFX • Building • UI • Coding • Modeling</p>
+    </div>
+
+</section>
+
+<!-- WORK -->
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>My Work</h2>
+        <p>click an image to expand it</p>
+    </div>
+
+    <div class="gallery">
+
+        <!-- WORK 1 -->
+        <div class="card">
+            <img src="10.png">
+
+            <div class="fade">
+                <h3>Cybuk running from SpringTrap</h3>
+                <p>This is a GFX made for someone named Cybuk where their avatar is running from SpringTrap.</p>
+            </div>
+        </div>
+
+        <!-- WORK 2 -->
+        <div class="card">
+            <img src="7.png">
+
+            <div class="fade">
+                <h3>Noob Be Mining</h3>
+                <p>A simple GFX containing a noob, the game logo and a rock for my game "Just Mining".</p>
+            </div>
+        </div>
+
+        <!-- WORK 3 -->
+        <div class="card">
+            <img src="3.png">
+
+            <div class="fade">
+                <h3>Conral Information Center</h3>
+                <p>One of my first builds for a theme park project called Conral.</p>
+            </div>
+        </div>
+
+        <!-- WORK 4 -->
+        <div class="card">
+            <img src="5.png">
+
+            <div class="fade">
+                <h3>Order 4!</h3>
+                <p>Pick-up area for the fast food teahouse/cafe Whisked.</p>
+            </div>
+        </div>
+
+        <!-- WORK 5 -->
+        <div class="card">
+            <img src="6.png">
+
+            <div class="fade">
+                <h3>I need to sit...</h3>
+                <p>This GFX contains my previous avatar sitting in nature.</p>
+            </div>
+        </div>
+
+        <!-- WORK 6 -->
+        <div class="card">
+            <img src="4.png">
+
+            <div class="fade">
+                <h3>Let's have some coffee</h3>
+                <p>A full indoor cafe build inspired by another model I found.</p>
+            </div>
+        </div>
+
+        <!-- WORK 7 -->
+        <div class="card">
+            <img src="1.png">
+
+            <div class="fade">
+                <h3>Welcome to Conral!</h3>
+                <p>The main center of Conral with a cafe, auditorium and ticket area.</p>
+            </div>
+        </div>
+
+        <!-- WORK 8 -->
+        <div class="card">
+            <img src="9.png">
+
+            <div class="fade">
+                <h3>Welcome to the cafe that never opened!</h3>
+                <p>Syrudo was a cafe project that was never publicly released.</p>
+            </div>
+        </div>
+
+        <!-- WORK 9 -->
+        <div class="card">
+            <img src="2.png">
+
+            <div class="fade">
+                <h3>The Auditorium!</h3>
+                <p>The entrance to the Conral theatre/auditorium.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMAGE POPUP -->
+
+<div class="popup" id="popup">
+
+    <span class="close" id="close">&times;</span>
+
+    <img id="popup-img">
+
+</div>
+
+<footer>
+    © 2026 bush portfolio
+</footer>
+
+<script>
+
+const cards = document.querySelectorAll(".card");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+const closeBtn = document.getElementById("close");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const img = card.querySelector("img");
+
+        popup.style.display = "flex";
+        popupImg.src = img.src;
+
+    });
+
+});
+
+closeBtn.addEventListener("click", () => {
+
+    popup.style.display = "none";
+
+});
+
+popup.addEventListener("click", (e) => {
+
+    if(e.target === popup){
+
+        popup.style.display = "none";
+
+    }
+
+});
+
+/* WARNING CLOSE */
+
+const warningBar = document.getElementById("warningBar");
+const warningClose = document.getElementById("warningClose");
+
+warningClose.addEventListener("click", () => {
+
+    warningBar.style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>
