@@ -279,6 +279,11 @@ footer{
         <p>Projects completed</p>
     </div>
 
+     <div class="stat">
+        <h2 id="clients">0</h2>
+        <p>Clients servers (GFX + DEV)</p>
+    </div>
+
 </section>
 
 <!-- WORK -->
@@ -411,7 +416,8 @@ document.getElementById("warningClose").addEventListener("click", () => {
 const data = {
     visits: 2000000,
     years: 4,
-    projects: 5
+    projects: 5,
+    clients: 9
 };
 
 function animate(id, target){
@@ -431,6 +437,7 @@ function animate(id, target){
 animate("visits", data.visits);
 animate("years", data.years);
 animate("projects", data.projects);
+animate("clients", data.clients);
 
 </script>
 
