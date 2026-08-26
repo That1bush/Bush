@@ -1,34 +1,349 @@
-<div class="gallery">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div style="
-        grid-column:1 / -1;
-        text-align:center;
-        padding:80px 20px;
-    ">
-        <img src="404.png" style="
-            width:100%;
-            max-width:700px;
-            max-height:400px;
-            object-fit:contain;
-            border-radius:20px;
-        ">
+<title>Bush Portfolio</title>
 
-        <h3 style="
-            margin-top:30px;
-            font-size:28px;
-            color:#ffb6ea;
-        ">
-            Sorry!
-        </h3>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <p style="
-            margin-top:10px;
-            color:#b0b0b0;
-            font-size:16px;
-        ">
-            There has been an issue loading everything!<br>
-            Try again shortly!
-        </p>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#07070b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffb6ea;
+    border-radius:999px;
+}
+
+/* WARNING BAR */
+
+.warning-bar{
+    width:100%;
+    background:rgba(255,182,234,0.12);
+    border-bottom:1px solid rgba(255,182,234,0.2);
+    padding:16px 70px 16px 20px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#ffd8f2;
+    font-size:15px;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.warning-close{
+    position:absolute;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.warning-close:hover{
+    opacity:0.7;
+}
+
+/* HERO */
+
+.hero{
+    width:100%;
+    height:500px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(0.55);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,#07070b 5%,transparent 60%);
+}
+
+.hero-content{
+    position:absolute;
+    bottom:60px;
+    left:7%;
+}
+
+.hero-content h1{
+    font-size:70px;
+    color:#ffb6ea;
+}
+
+.hero-content p{
+    color:#d7d7d7;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    padding:60px 7%;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:48px;
+    color:#ffb6ea;
+}
+
+.stat p{
+    color:#b0b0b0;
+    margin-top:6px;
+}
+
+/* SECTION */
+
+.section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#b0b0b0;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* ERROR MESSAGE */
+
+.error-message{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:40px 20px 80px;
+}
+
+.error-message img{
+    width:100%;
+    max-width:700px;
+    max-height:400px;
+    object-fit:contain;
+    border-radius:20px;
+}
+
+.error-message h3{
+    margin-top:30px;
+    font-size:28px;
+    color:#ffb6ea;
+}
+
+.error-message p{
+    margin-top:10px;
+    color:#b0b0b0;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- WARNING BAR -->
+
+<div class="warning-bar" id="warningBar">
+    <p>
+        NOTE: I'm still uploading work to this portfolio,
+        so some of my projects/work may still be missing. Check back later for more updates!
+    </p>
+
+    <span class="warning-close" id="warningClose">&times;</span>
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <img src="Banner4.png">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>1Bush</h1>
+        <p>Roblox GFX • Building • UI</p>
     </div>
 
-</div>
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat">
+        <h2 id="visits">0</h2>
+        <p>Visits contributed to</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="years">0</h2>
+        <p>Years of work</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="projects">0</h2>
+        <p>Projects completed</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="clients">0</h2>
+        <p>Clients servers (GFX + DEV)</p>
+    </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>My Work</h2>
+        <p>click an image to expand it</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="error-message">
+
+            <img src="404.png" alt="404">
+
+            <h3>Sorry!</h3>
+
+            <p>
+                There has been an issue loading everything!<br>
+                Try again shortly!
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <a href=""
+       style="
+       display:inline-block;
+       padding:14px 30px;
+       background:#ffb6ea;
+       color:#07070b;
+       text-decoration:none;
+       border-radius:999px;
+       font-weight:600;
+       margin-bottom:20px;">
+       COMING SOON
+    </a>
+
+    <br><br>
+
+    © 2026 bush portfolio
+
+</footer>
+
+
+<script>
+
+/* WARNING CLOSE */
+
+document.getElementById("warningClose").addEventListener("click", () => {
+    document.getElementById("warningBar").style.display = "none";
+});
+
+
+/* STATS ANIMATION */
+
+const data = {
+    visits: 2000000,
+    years: 4,
+    projects: 5,
+    clients: 14
+};
+
+function animate(id, target){
+
+    let current = 0;
+    const step = Math.ceil(target / 120);
+
+    const interval = setInterval(() => {
+
+        current += step;
+
+        if(current >= target){
+            current = target;
+            clearInterval(interval);
+        }
+
+        document.getElementById(id).innerText = current;
+
+    }, 15);
+}
+
+animate("visits", data.visits);
+animate("years", data.years);
+animate("projects", data.projects);
+animate("clients", data.clients);
+
+</script>
+
+</body>
+</html>
