@@ -111,6 +111,7 @@ body{
     gap:80px;
     padding:60px 7%;
     text-align:center;
+    flex-wrap:wrap;
 }
 
 .stat h2{
@@ -131,7 +132,7 @@ body{
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
 .section-title h2{
@@ -141,6 +142,41 @@ body{
 
 .section-title p{
     color:#b0b0b0;
+}
+
+/* FILTERS */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:45px;
+}
+
+.filter-btn{
+    border:1px solid rgba(255,182,234,0.25);
+    background:rgba(255,255,255,0.04);
+    color:#d0d0d0;
+    padding:11px 22px;
+    border-radius:999px;
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.filter-btn:hover{
+    background:rgba(255,182,234,0.1);
+    color:white;
+    border-color:rgba(255,182,234,0.5);
+}
+
+.filter-btn.active{
+    background:#ffb6ea;
+    color:#07070b;
+    border-color:#ffb6ea;
+    font-weight:600;
 }
 
 /* GALLERY */
@@ -188,6 +224,23 @@ body{
 .fade p{
     color:#d0d0d0;
     font-size:14px;
+}
+
+/* 404 */
+
+.no-results{
+    display:none;
+    grid-column:1 / -1;
+    height:380px;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+}
+
+.no-results img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 /* POPUP */
@@ -240,225 +293,516 @@ footer{
 
 </style>
 </head>
+
 <body>
 
 <!-- WARNING BAR -->
+
 <div class="warning-bar" id="warningBar">
+
     <p>
         NOTE: I'm still uploading work to this portfolio,
         so some of my projects/work may still be missing. Check back later for more updates!
     </p>
+
     <span class="warning-close" id="warningClose">&times;</span>
+
 </div>
 
+
 <!-- HERO -->
+
 <section class="hero">
+
     <img src="Banner4.png">
+
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
+
         <h1>1Bush</h1>
+
         <p>Roblox GFX • Building • UI</p>
+
     </div>
+
 </section>
 
+
 <!-- STATS -->
+
 <section class="stats">
 
     <div class="stat">
+
         <h2 id="visits">0</h2>
+
         <p>Visits contributed to</p>
+
     </div>
 
+
     <div class="stat">
+
         <h2 id="years">0</h2>
+
         <p>Years of work</p>
+
     </div>
 
+
     <div class="stat">
+
         <h2 id="projects">0</h2>
+
         <p>Projects completed</p>
+
     </div>
 
+
     <div class="stat">
+
         <h2 id="clients">0</h2>
+
         <p>Clients servers (GFX + DEV)</p>
+
     </div>
 
 </section>
 
+
 <!-- WORK -->
+
 <section class="section">
 
     <div class="section-title">
+
         <h2>My Work</h2>
+
         <p>click an image to expand it</p>
+
     </div>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filters">
+
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="building">
+            Building
+        </button>
+
+        <button class="filter-btn" data-filter="ui">
+            UI
+        </button>
+
+        <button class="filter-btn" data-filter="coding">
+            Coding
+        </button>
+
+        <button class="filter-btn" data-filter="gfx">
+            GFX
+        </button>
+
+    </div>
+
 
     <div class="gallery">
 
-        <div class="card">
+
+        <!-- GFX -->
+
+        <div class="card" data-category="gfx">
+
             <img src="10.png">
+
             <div class="fade">
+
                 <h3>Cybuk running from SpringTrap</h3>
-                <p>Cybuk is running from springtrap! A dream come true!!! Oh wait.... He looks scared. Oh no I should save him!!!.</p>
+
+                <p>
+                    Cybuk is running from springtrap! A dream come true!!! Oh wait.... He looks scared. Oh no I should save him!!!.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- GFX -->
+
+        <div class="card" data-category="gfx">
+
             <img src="7.png">
+
             <div class="fade">
+
                 <h3>Noob Be Mining</h3>
-                <p>A simple GFX containing a noob, the game logo and a rock for my game "Just Mining".</p>
+
+                <p>
+                    A simple GFX containing a noob, the game logo and a rock for my game "Just Mining".
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="3.png">
+
             <div class="fade">
+
                 <h3>Conral Information Center</h3>
-                <p>One of my first builds for a theme park project called Conral.</p>
+
+                <p>
+                    One of my first builds for a theme park project called Conral.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="5.png">
+
             <div class="fade">
+
                 <h3>Order 4!</h3>
-                <p>Pick-up area for the fast food teahouse/cafe Whisked.</p>
+
+                <p>
+                    Pick-up area for the fast food teahouse/cafe Whisked.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- GFX -->
+
+        <div class="card" data-category="gfx">
+
             <img src="6.png">
+
             <div class="fade">
+
                 <h3>I need to sit...</h3>
-                <p>This GFX contains my previous avatar sitting in nature.</p>
+
+                <p>
+                    This GFX contains my previous avatar sitting in nature.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="4.png">
+
             <div class="fade">
+
                 <h3>Let's have some coffee</h3>
-                <p>A full indoor cafe build inspired by another model I found.</p>
+
+                <p>
+                    A full indoor cafe build inspired by another model I found.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="1.png">
+
             <div class="fade">
+
                 <h3>Welcome to Conral!</h3>
-                <p>The main center of Conral with a cafe, auditorium and ticket area.</p>
+
+                <p>
+                    The main center of Conral with a cafe, auditorium and ticket area.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="9.png">
+
             <div class="fade">
+
                 <h3>Welcome to the cafe that never opened!</h3>
-                <p>Syrudo was a cafe project that was never publicly released.</p>
+
+                <p>
+                    Syrudo was a cafe project that was never publicly released.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="2.png">
+
             <div class="fade">
+
                 <h3>The Auditorium!</h3>
-                <p>The entrance to the Conral theatre/auditorium.</p>
+
+                <p>
+                    The entrance to the Conral theatre/auditorium.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="11.png">
+
             <div class="fade">
+
                 <h3>Whisked Unfinished Outdoors!</h3>
-                <p>Whisked was going to be a unique Fast Food group. It was going to be THE first Fast Food teahouse!</p>
+
+                <p>
+                    Whisked was going to be a unique Fast Food group. It was going to be THE first Fast Food teahouse!
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="12.png">
+
             <div class="fade">
+
                 <h3>You have completed the tower.!</h3>
-                <p>While not completely mind, I helped to complete the finish of a tower obby.</p>
+
+                <p>
+                    While not completely mind, I helped to complete the finish of a tower obby.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- GFX -->
+
+        <div class="card" data-category="gfx">
+
             <img src="13.png">
+
             <div class="fade">
+
                 <h3>Welcome to Conral!</h3>
-                <p>Conral has to be different! And to do that we made GFX banners for the exit's and enterance's so that people felt welcome!</p>
+
+                <p>
+                    Conral has to be different! And to do that we made GFX banners for the exit's and enterance's so that people felt welcome!
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="14.png">
+
             <div class="fade">
+
                 <h3>The Lounge (Unfinished)</h3>
-                <p>Conral had another thing. Conral was a theatre, not a movie theatre but a show theatre! The sets were built by hand, people had to prepear! And while waiting for that to happen you may get tired, so we built the Lounge.</p>
+
+                <p>
+                    Conral had another thing. Conral was a theatre, not a movie theatre but a show theatre! The sets were built by hand, people had to prepear! And while waiting for that to happen you may get tired, so we built the Lounge.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="15.png">
+
             <div class="fade">
+
                 <h3>Pond</h3>
-                <p>I love nature, so in one of my games I had lots of nature. And nature wouldn't be able to live without water so I added a pond.</p>
+
+                <p>
+                    I love nature, so in one of my games I had lots of nature. And nature wouldn't be able to live without water so I added a pond.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="16.png">
+
             <div class="fade">
+
                 <h3>Tamoura fall's</h3>
-                <p>It's called Tamoura falls but really, it's kinda in reality a tiny waterfall...</p>
+
+                <p>
+                    It's called Tamoura falls but really, it's kinda in reality a tiny waterfall...
+                </p>
+
             </div>
+
         </div>
-        
-        <div class="card">
+
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="17.png">
+
             <div class="fade">
+
                 <h3>Sewer Creek</h3>
-                <p>For one of me and my friend's game "Run" we wanted something dividing the stores and the spawn so it didn't feel cluttered. We added a river that was really a sewer...</p>
+
+                <p>
+                    For one of me and my friend's game "Run" we wanted something dividing the stores and the spawn so it didn't feel cluttered. We added a river that was really a sewer...
+                </p>
+
             </div>
+
         </div>
-         
-        <div class="card">
+
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="18.png">
+
             <div class="fade">
+
                 <h3>Run Spawn</h3>
-                <p>Wen need a spawn for Run so this is what it is! Although unfinished when taken, we still loved it. Ui was weird though.</p>
+
+                <p>
+                    Wen need a spawn for Run so this is what it is! Although unfinished when taken, we still loved it. Ui was weird though.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="20.png">
+
             <div class="fade">
+
                 <h3>Remember Tamoura!</h3>
-                <p>Make sure to take a photo before leaving so you can always remember your visit to Tamoura!</p>
+
+                <p>
+                    Make sure to take a photo before leaving so you can always remember your visit to Tamoura!
+                </p>
+
             </div>
+
         </div>
 
-        <div class="card">
+
+        <!-- BUILDING -->
+
+        <div class="card" data-category="building">
+
             <img src="21.png">
+
             <div class="fade">
+
                 <h3>Tamoura?</h3>
-                <p>This includes a lot of the things I did for tamoura (excluding the Arch and the main building). I LOVED it.</p>
+
+                <p>
+                    This includes a lot of the things I did for tamoura (excluding the Arch and the main building). I LOVED it.
+                </p>
+
             </div>
+
         </div>
+
+
+        <!-- 404 -->
+
+        <div class="no-results" id="noResults">
+
+            <img src="404.png">
+
+        </div>
+
 
     </div>
 
 </section>
 
+
 <!-- POPUP -->
+
 <div class="popup" id="popup">
+
     <span class="close" id="close">&times;</span>
+
     <img id="popup-img">
+
 </div>
 
-<footer style="padding:40px;text-align:center;color:#888;">
+
+<!-- FOOTER -->
+
+<footer>
 
     <a href=""
        style="
@@ -470,7 +814,9 @@ footer{
        border-radius:999px;
        font-weight:600;
        margin-bottom:20px;">
+
        COMING SOON
+
     </a>
 
     <br><br>
@@ -479,63 +825,180 @@ footer{
 
 </footer>
 
+
 <script>
 
+/* POPUP */
+
 const cards = document.querySelectorAll(".card");
+
 const popup = document.getElementById("popup");
+
 const popupImg = document.getElementById("popup-img");
+
 const closeBtn = document.getElementById("close");
 
+
 cards.forEach(card => {
+
     card.addEventListener("click", () => {
+
         const img = card.querySelector("img");
+
         popup.style.display = "flex";
+
         popupImg.src = img.src;
+
     });
+
 });
+
 
 closeBtn.addEventListener("click", () => {
+
     popup.style.display = "none";
+
 });
+
 
 popup.addEventListener("click", (e) => {
+
     if(e.target === popup){
+
         popup.style.display = "none";
+
     }
+
 });
+
 
 /* WARNING CLOSE */
+
 document.getElementById("warningClose").addEventListener("click", () => {
+
     document.getElementById("warningBar").style.display = "none";
+
 });
 
-/* STATS ANIMATION */
-const data = {
-    visits: 2000000,
-    years: 4,
-    projects: 5,
-    clients: 14
-};
 
-function animate(id, target){
-    let current = 0;
-    const step = Math.ceil(target / 120);
+/* FILTER SYSTEM */
 
-    const interval = setInterval(() => {
-        current += step;
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-        if(current >= target){
-            current = target;
-            clearInterval(interval);
+const galleryCards = document.querySelectorAll(".card");
+
+const noResults = document.getElementById("noResults");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        let visibleCards = 0;
+
+
+        /* ACTIVE BUTTON */
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        /* FILTER CARDS */
+
+        galleryCards.forEach(card => {
+
+            const category = card.dataset.category;
+
+
+            if(filter === "all" || category === filter){
+
+                card.style.display = "block";
+
+                visibleCards++;
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        /* SHOW 404 IF NOTHING EXISTS */
+
+        if(visibleCards === 0){
+
+            noResults.style.display = "block";
+
+        }else{
+
+            noResults.style.display = "none";
+
         }
 
-        document.getElementById(id).innerText = current.toLocaleString();
-    }, 15);
+    });
+
+});
+
+
+/* STATS ANIMATION */
+
+const data = {
+
+    visits: 3000000,
+
+    years: 4,
+
+    projects: 5,
+
+    clients: 14
+
+};
+
+
+function animate(id, target){
+
+    let current = 0;
+
+    const step = Math.ceil(target / 120);
+
+
+    const interval = setInterval(() => {
+
+        current += step;
+
+
+        if(current >= target){
+
+            current = target;
+
+            clearInterval(interval);
+
+        }
+
+
+        document.getElementById(id).innerText =
+            current.toLocaleString();
+
+    },15);
+
 }
 
+
 animate("visits", data.visits);
+
 animate("years", data.years);
+
 animate("projects", data.projects);
+
 animate("clients", data.clients);
 
 </script>
