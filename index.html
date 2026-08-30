@@ -279,7 +279,7 @@ footer{
         <p>Projects completed</p>
     </div>
 
-     <div class="stat">
+    <div class="stat">
         <h2 id="clients">0</h2>
         <p>Clients servers (GFX + DEV)</p>
     </div>
@@ -392,7 +392,7 @@ footer{
             </div>
         </div>
 
-       <div class="card">
+        <div class="card">
             <img src="14.png">
             <div class="fade">
                 <h3>The Lounge (Unfinished)</h3>
@@ -400,7 +400,7 @@ footer{
             </div>
         </div>
 
-    <div class="card">
+        <div class="card">
             <img src="15.png">
             <div class="fade">
                 <h3>Pond</h3>
@@ -408,7 +408,7 @@ footer{
             </div>
         </div>
 
-    <div class="card">
+        <div class="card">
             <img src="16.png">
             <div class="fade">
                 <h3>Tamoura fall's</h3>
@@ -416,7 +416,7 @@ footer{
             </div>
         </div>
         
-         <div class="card">
+        <div class="card">
             <img src="17.png">
             <div class="fade">
                 <h3>Sewer Creek</h3>
@@ -432,7 +432,7 @@ footer{
             </div>
         </div>
 
-         <div class="card">
+        <div class="card">
             <img src="20.png">
             <div class="fade">
                 <h3>Remember Tamoura!</h3>
@@ -523,11 +523,13 @@ function animate(id, target){
 
     const interval = setInterval(() => {
         current += step;
+
         if(current >= target){
             current = target;
             clearInterval(interval);
         }
-        document.getElementById(id).innerText = current;
+
+        document.getElementById(id).innerText = current.toLocaleString();
     }, 15);
 }
 
